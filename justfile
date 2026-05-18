@@ -28,7 +28,7 @@ _:
 #
 
 set shell := ["bash", "-uc"]
-set quiet := true
+set quiet
 
 export EXTRA_DEBUG_TEXT := '''
   built binaries are in $GOPATH/bin

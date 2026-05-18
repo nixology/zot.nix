@@ -1,5 +1,5 @@
 set shell := ["bash", "-uc"]
-set quiet := true
+set quiet
 
 #
 # variables

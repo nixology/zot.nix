@@ -3,15 +3,16 @@
     "ZOT": {
       "flake": false,
       "locked": {
-        "lastModified": 1773186054,
-        "narHash": "sha256-tw5R30s3OzA4ZnysOb1yl+j6qspi7Unsh1H53YpFWwk=",
+        "lastModified": 1779081686,
+        "narHash": "sha256-/1QEMpDq8okaVWhaynlJ+tE1b6AObUnHfHrmnylBKL0=",
         "owner": "project-zot",
         "repo": "zot",
-        "rev": "8f0bf18d7eddbfbd84c2a77693241362602987ff",
+        "rev": "08b26876daaeb5ebc138775f103586cb7aa475fd",
         "type": "github"
       },
       "original": {
         "owner": "project-zot",
+        "ref": "v2.1.17",
         "repo": "zot",
         "type": "github"
       }
@@ -19,11 +20,11 @@
     "ZUI": {
       "flake": false,
       "locked": {
-        "lastModified": 1771667175,
-        "narHash": "sha256-WjOBnINKwHb/B9iweg3Tt2Jdbg4jFgjE7lGJ57X6hF4=",
+        "lastModified": 1779002171,
+        "narHash": "sha256-iu1ULVkIul6QOBcKRR3NlpBpSEUfva1R7TIXU5gPfuA=",
         "owner": "project-zot",
         "repo": "zui",
-        "rev": "111cb8e40e5e3dd4e9641820e8795a13c19b8154",
+        "rev": "34deb3d37319e4bf12d261cf3c53fa718968a38e",
         "type": "github"
       },
       "original": {
@@ -32,22 +33,67 @@
         "type": "github"
       }
     },
-    "flake": {
+    "channel": {
       "inputs": {
-        "std": "std"
+        "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1774559559,
-        "narHash": "sha256-mTwHJ7rIEzZqn7EC7HeX1C68kvlq5CvgHOBrF39vwdQ=",
-        "ref": "refs/heads/main",
-        "rev": "8414feeeb62c4f2cdd9ddea5e16f0742f5841e87",
-        "revCount": 87,
-        "type": "git",
-        "url": "ssh://git@github.com/marksisson/flake"
+        "dir": "nixpkgs-unstable",
+        "lastModified": 1780022202,
+        "narHash": "sha256-nnuWdbt+geRbhqBWti5nWGsuujs3Uo0LSQ3sUpZeB0k=",
+        "owner": "nixology",
+        "repo": "channels.nix",
+        "rev": "0e754b6ed1558400722dd1ac37c4b37d1a9a873e",
+        "type": "github"
       },
       "original": {
-        "type": "git",
-        "url": "ssh://git@github.com/marksisson/flake"
+        "dir": "nixpkgs-unstable",
+        "owner": "nixology",
+        "repo": "channels.nix",
+        "type": "github"
+      }
+    },
+    "core": {
+      "inputs": {
+        "channel": "channel",
+        "flake-parts": "flake-parts",
+        "nixpkgs": [
+          "flake",
+          "core",
+          "channel",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1780024047,
+        "narHash": "sha256-QBVZim8m1OAWulSdCBjBtHTJrxzI8a4HH088jr3GoXs=",
+        "owner": "nixology",
+        "repo": "core.nix",
+        "rev": "e38cbd56e04793364543362e877b828988a80100",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixology",
+        "repo": "core.nix",
+        "type": "github"
+      }
+    },
+    "flake": {
+      "inputs": {
+        "core": "core"
+      },
+      "locked": {
+        "lastModified": 1780024341,
+        "narHash": "sha256-N2QZa+By0JMKTo1Vmftt9uBBlifAAAHtTeJQgUbffE8=",
+        "owner": "nixology",
+        "repo": "flake.nix",
+        "rev": "d46f1d52085cd477fe7ccd1b056cd7b28dd49675",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixology",
+        "repo": "flake.nix",
+        "type": "github"
       }
     },
     "flake-parts": {
@@ -55,11 +101,11 @@
         "nixpkgs-lib": "nixpkgs-lib"
       },
       "locked": {
-        "lastModified": 1772408722,
-        "narHash": "sha256-rHuJtdcOjK7rAHpHphUb1iCvgkU3GpfvicLMwwnfMT0=",
+        "lastModified": 1778716662,
+        "narHash": "sha256-m1Yf0wZ8j1OHjTc2UwHwyQRSnNeSgLJOd7q5Y45hzi4=",
         "owner": "hercules-ci",
         "repo": "flake-parts",
-        "rev": "f20dc5d9b8027381c474144ecabc9034d6a839a3",
+        "rev": "f7c1a2d347e4c52d5fb8d10cb4d94b5884e546fb",
         "type": "github"
       },
       "original": {
@@ -68,13 +114,29 @@
         "type": "github"
       }
     },
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1778869304,
+        "narHash": "sha256-30sZNZoA1cqF5JNO9fVX+wgiQYjB7HJqqJ4ztCDeBZE=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "d233902339c02a9c334e7e593de68855ad26c4cb",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "nixpkgs-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "nixpkgs-lib": {
       "locked": {
-        "lastModified": 1772328832,
-        "narHash": "sha256-e+/T/pmEkLP6BHhYjx6GmwP5ivonQQn0bJdH9YrRB+Q=",
+        "lastModified": 1777168982,
+        "narHash": "sha256-GOkGPcboWE9BmGCRMLX3worL4EMnsnG8MyKmXNeYuhQ=",
         "owner": "nix-community",
         "repo": "nixpkgs.lib",
-        "rev": "c185c7a5e5dd8f9add5b2f8ebeff00888b070742",
+        "rev": "f5901329dade4a6ea039af1433fb087bd9c1fe14",
         "type": "github"
       },
       "original": {
@@ -88,24 +150,6 @@
         "ZOT": "ZOT",
         "ZUI": "ZUI",
         "flake": "flake"
-      }
-    },
-    "std": {
-      "inputs": {
-        "flake-parts": "flake-parts"
-      },
-      "locked": {
-        "lastModified": 1774222653,
-        "narHash": "sha256-DRSD+d6GR+QuJuocA3boL6AIKfdMInbAPbrupys2HP0=",
-        "ref": "refs/heads/main",
-        "rev": "1e9d432a07f458411d9446f4dfd0761f478dd73f",
-        "revCount": 40,
-        "type": "git",
-        "url": "ssh://git@github.com/marksisson/std"
-      },
-      "original": {
-        "type": "git",
-        "url": "ssh://git@github.com/marksisson/std"
       }
     }
   },

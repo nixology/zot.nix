@@ -1,34 +1,48 @@
 {
   "nodes": {
-    "ZOT": {
-      "flake": false,
+    "channel": {
+      "inputs": {
+        "nixpkgs": "nixpkgs"
+      },
       "locked": {
-        "lastModified": 1773186054,
-        "narHash": "sha256-tw5R30s3OzA4ZnysOb1yl+j6qspi7Unsh1H53YpFWwk=",
-        "owner": "project-zot",
-        "repo": "zot",
-        "rev": "8f0bf18d7eddbfbd84c2a77693241362602987ff",
+        "dir": "nixpkgs-unstable",
+        "lastModified": 1780022202,
+        "narHash": "sha256-nnuWdbt+geRbhqBWti5nWGsuujs3Uo0LSQ3sUpZeB0k=",
+        "owner": "nixology",
+        "repo": "channels.nix",
+        "rev": "0e754b6ed1558400722dd1ac37c4b37d1a9a873e",
         "type": "github"
       },
       "original": {
-        "owner": "project-zot",
-        "repo": "zot",
+        "dir": "nixpkgs-unstable",
+        "owner": "nixology",
+        "repo": "channels.nix",
         "type": "github"
       }
     },
-    "ZUI": {
-      "flake": false,
+    "core": {
+      "inputs": {
+        "channel": "channel",
+        "flake-parts": "flake-parts",
+        "nixpkgs": [
+          "environments",
+          "flake",
+          "core",
+          "channel",
+          "nixpkgs"
+        ]
+      },
       "locked": {
-        "lastModified": 1771667175,
-        "narHash": "sha256-WjOBnINKwHb/B9iweg3Tt2Jdbg4jFgjE7lGJ57X6hF4=",
-        "owner": "project-zot",
-        "repo": "zui",
-        "rev": "111cb8e40e5e3dd4e9641820e8795a13c19b8154",
+        "lastModified": 1780024047,
+        "narHash": "sha256-QBVZim8m1OAWulSdCBjBtHTJrxzI8a4HH088jr3GoXs=",
+        "owner": "nixology",
+        "repo": "core.nix",
+        "rev": "e38cbd56e04793364543362e877b828988a80100",
         "type": "github"
       },
       "original": {
-        "owner": "project-zot",
-        "repo": "zui",
+        "owner": "nixology",
+        "repo": "core.nix",
         "type": "github"
       }
     },
@@ -37,35 +51,35 @@
         "flake": "flake"
       },
       "locked": {
-        "lastModified": 1774559617,
-        "narHash": "sha256-as/0uBpQ6oTAn/5tmz8nAf+LE1F/sV7DCSsCD+7Mlsg=",
-        "ref": "refs/heads/main",
-        "rev": "286a7976517904ba06f302a939072cd3edfa9073",
-        "revCount": 9,
-        "type": "git",
-        "url": "ssh://git@github.com/marksisson/environments"
+        "lastModified": 1780024453,
+        "narHash": "sha256-t9Q+cW8PrzFWW/XMFRxEaR0IKSRoqQMpoYnYElZ9p8k=",
+        "owner": "nixology",
+        "repo": "environments.nix",
+        "rev": "8eebe98b6457e2bb19181a8a457d24b67fe0ea6f",
+        "type": "github"
       },
       "original": {
-        "type": "git",
-        "url": "ssh://git@github.com/marksisson/environments"
+        "owner": "nixology",
+        "repo": "environments.nix",
+        "type": "github"
       }
     },
     "flake": {
       "inputs": {
-        "std": "std"
+        "core": "core"
       },
       "locked": {
-        "lastModified": 1774559559,
-        "narHash": "sha256-mTwHJ7rIEzZqn7EC7HeX1C68kvlq5CvgHOBrF39vwdQ=",
-        "ref": "refs/heads/main",
-        "rev": "8414feeeb62c4f2cdd9ddea5e16f0742f5841e87",
-        "revCount": 87,
-        "type": "git",
-        "url": "ssh://git@github.com/marksisson/flake"
+        "lastModified": 1780024341,
+        "narHash": "sha256-N2QZa+By0JMKTo1Vmftt9uBBlifAAAHtTeJQgUbffE8=",
+        "owner": "nixology",
+        "repo": "flake.nix",
+        "rev": "d46f1d52085cd477fe7ccd1b056cd7b28dd49675",
+        "type": "github"
       },
       "original": {
-        "type": "git",
-        "url": "ssh://git@github.com/marksisson/flake"
+        "owner": "nixology",
+        "repo": "flake.nix",
+        "type": "github"
       }
     },
     "flake-parts": {
@@ -73,11 +87,11 @@
         "nixpkgs-lib": "nixpkgs-lib"
       },
       "locked": {
-        "lastModified": 1772408722,
-        "narHash": "sha256-rHuJtdcOjK7rAHpHphUb1iCvgkU3GpfvicLMwwnfMT0=",
+        "lastModified": 1778716662,
+        "narHash": "sha256-m1Yf0wZ8j1OHjTc2UwHwyQRSnNeSgLJOd7q5Y45hzi4=",
         "owner": "hercules-ci",
         "repo": "flake-parts",
-        "rev": "f20dc5d9b8027381c474144ecabc9034d6a839a3",
+        "rev": "f7c1a2d347e4c52d5fb8d10cb4d94b5884e546fb",
         "type": "github"
       },
       "original": {
@@ -86,80 +100,29 @@
         "type": "github"
       }
     },
-    "flake-parts_2": {
-      "inputs": {
-        "nixpkgs-lib": "nixpkgs-lib_2"
-      },
+    "nixpkgs": {
       "locked": {
-        "lastModified": 1772408722,
-        "narHash": "sha256-rHuJtdcOjK7rAHpHphUb1iCvgkU3GpfvicLMwwnfMT0=",
-        "owner": "hercules-ci",
-        "repo": "flake-parts",
-        "rev": "f20dc5d9b8027381c474144ecabc9034d6a839a3",
+        "lastModified": 1778869304,
+        "narHash": "sha256-30sZNZoA1cqF5JNO9fVX+wgiQYjB7HJqqJ4ztCDeBZE=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "d233902339c02a9c334e7e593de68855ad26c4cb",
         "type": "github"
       },
       "original": {
-        "owner": "hercules-ci",
-        "repo": "flake-parts",
+        "owner": "nixos",
+        "ref": "nixpkgs-unstable",
+        "repo": "nixpkgs",
         "type": "github"
       }
-    },
-    "flake_2": {
-      "inputs": {
-        "std": "std_2"
-      },
-      "locked": {
-        "lastModified": 1774559559,
-        "narHash": "sha256-mTwHJ7rIEzZqn7EC7HeX1C68kvlq5CvgHOBrF39vwdQ=",
-        "ref": "refs/heads/main",
-        "rev": "8414feeeb62c4f2cdd9ddea5e16f0742f5841e87",
-        "revCount": 87,
-        "type": "git",
-        "url": "ssh://git@github.com/marksisson/flake"
-      },
-      "original": {
-        "type": "git",
-        "url": "ssh://git@github.com/marksisson/flake"
-      }
-    },
-    "main": {
-      "inputs": {
-        "ZOT": "ZOT",
-        "ZUI": "ZUI",
-        "flake": "flake_2"
-      },
-      "locked": {
-        "path": "../..",
-        "type": "path"
-      },
-      "original": {
-        "path": "../..",
-        "type": "path"
-      },
-      "parent": []
     },
     "nixpkgs-lib": {
       "locked": {
-        "lastModified": 1772328832,
-        "narHash": "sha256-e+/T/pmEkLP6BHhYjx6GmwP5ivonQQn0bJdH9YrRB+Q=",
+        "lastModified": 1777168982,
+        "narHash": "sha256-GOkGPcboWE9BmGCRMLX3worL4EMnsnG8MyKmXNeYuhQ=",
         "owner": "nix-community",
         "repo": "nixpkgs.lib",
-        "rev": "c185c7a5e5dd8f9add5b2f8ebeff00888b070742",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nix-community",
-        "repo": "nixpkgs.lib",
-        "type": "github"
-      }
-    },
-    "nixpkgs-lib_2": {
-      "locked": {
-        "lastModified": 1772328832,
-        "narHash": "sha256-e+/T/pmEkLP6BHhYjx6GmwP5ivonQQn0bJdH9YrRB+Q=",
-        "owner": "nix-community",
-        "repo": "nixpkgs.lib",
-        "rev": "c185c7a5e5dd8f9add5b2f8ebeff00888b070742",
+        "rev": "f5901329dade4a6ea039af1433fb087bd9c1fe14",
         "type": "github"
       },
       "original": {
@@ -170,44 +133,7 @@
     },
     "root": {
       "inputs": {
-        "environments": "environments",
-        "main": "main"
-      }
-    },
-    "std": {
-      "inputs": {
-        "flake-parts": "flake-parts"
-      },
-      "locked": {
-        "lastModified": 1774222653,
-        "narHash": "sha256-DRSD+d6GR+QuJuocA3boL6AIKfdMInbAPbrupys2HP0=",
-        "ref": "refs/heads/main",
-        "rev": "1e9d432a07f458411d9446f4dfd0761f478dd73f",
-        "revCount": 40,
-        "type": "git",
-        "url": "ssh://git@github.com/marksisson/std"
-      },
-      "original": {
-        "type": "git",
-        "url": "ssh://git@github.com/marksisson/std"
-      }
-    },
-    "std_2": {
-      "inputs": {
-        "flake-parts": "flake-parts_2"
-      },
-      "locked": {
-        "lastModified": 1774222653,
-        "narHash": "sha256-DRSD+d6GR+QuJuocA3boL6AIKfdMInbAPbrupys2HP0=",
-        "ref": "refs/heads/main",
-        "rev": "1e9d432a07f458411d9446f4dfd0761f478dd73f",
-        "revCount": 40,
-        "type": "git",
-        "url": "ssh://git@github.com/marksisson/std"
-      },
-      "original": {
-        "type": "git",
-        "url": "ssh://git@github.com/marksisson/std"
+        "environments": "environments"
       }
     }
   },

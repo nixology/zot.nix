@@ -20,6 +20,8 @@ let
             inherit version;
             src = mergedSrc;
 
+            goSum = "${mergedSrc}/go.sum";
+
             subPackages = [
               "cmd/zot"
               "cmd/zli"
@@ -56,7 +58,7 @@ let
 
             doCheck = false;
 
-            vendorHash = "sha256-/M2cDXhT6j2uGBYexKjm9JkTsK5KcUlQbUvDt0h5N20=";
+            vendorHash = "sha256-09LQKBKyqpgBbC44VPsZ3RJcwrHWy6TpF87u35UgcYI=";
           };
       };
   };

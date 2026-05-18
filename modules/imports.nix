@@ -7,10 +7,10 @@ let
         nixology.extra.shellEnvs
         nixology.flake.modules
         nixology.flake.packages
-        nixology.std.components
-        nixology.std.debug
-        nixology.std.lib
-        nixology.std.partitions
+        nixology.core.components
+        nixology.core.debug
+        nixology.core.lib
+        nixology.core.partitions
         nixology.tools.treefmt
       ];
 
@@ -23,6 +23,7 @@ let
             nixology.environments.bash
             nixology.environments.go
             nixology.environments.just
+            nixology.environments.nix
           ];
       };
   };

@@ -9,7 +9,7 @@ let
           version = inputs.ZUI.shortRev;
           src = inputs.ZUI;
 
-          npmDepsHash = "sha256-TI/e5aDe4Lv5SXbQ/9LCAzwR13z8Wrm7m16+1E3Shp8=";
+          npmDepsHash = "sha256-O01OtR3SJ69ScMLgkqVCNx7MGJ5HmXTn22M/zRcZMkg=";
 
           installPhase = ''
             mkdir $out
