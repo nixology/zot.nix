@@ -3,8 +3,8 @@
     perSystem =
       { config, lib, ... }:
       {
-        shellEnvs.default =
-          with config.shellEnvs;
+        shellEnvironments.default =
+          with config.shellEnvironments;
           lib.mkMerge [
             go
             just

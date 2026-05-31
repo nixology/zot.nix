@@ -1,6 +1,8 @@
 { inputs, ... }:
 let
-  module = {
+  nixology = inputs.self.components.nixology // inputs.flake.components.nixology;
+
+  implementation = {
     perSystem =
       { pkgs, system, ... }:
       {
@@ -63,16 +65,38 @@ let
       };
   };
 
-  component = {
-    inherit module;
-    dependencies = with inputs.parts.components; [
-      nixology.parts.systems
-    ];
+  check = {
+    perSystem =
+      { pkgs, ... }:
+      let
+        evalZot = inputs.flake.lib.evalComponent { inherit inputs; } nixology.zot.zot;
+      in
+      {
+        checks.zot-component = pkgs.runCommandLocal "zot-component-check" { } ''
+          : ${builtins.seq evalZot.config "ok"}
+          touch "$out"
+        '';
+      };
   };
 in
 {
-  imports = [ module ];
+  imports = [
+    check
+    implementation
+  ];
+
   flake.components = {
-    nixology.zot.zot = component;
+    nixology.zot.zot = {
+      inherit implementation;
+
+      dependencies = [
+        nixology.core.perSystem
+      ];
+
+      meta = {
+        description = "Zot is a production-ready, OCI-native container image and artifact registry. It includes the zot server, the zli CLI tool, and the zui web UI extension.";
+        shortDescription = "OCI-native container image and artifact registry";
+      };
+    };
   };
 }
